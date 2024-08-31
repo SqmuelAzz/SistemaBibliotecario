@@ -10,16 +10,13 @@ class Ejemplar:
 
 
 class Articulo:
-    def __init__(self, id_articulo, titulo, autor, ano_publicacion, editorial, categoria, palabras_clave, cantidad):
+    def __init__(self, id_articulo, titulo, autor, isbn, editorial):
         self.id_articulo = id_articulo
         self.titulo = titulo
         self.autor = autor
-        self.ano_publicacion = ano_publicacion
+        self.isbn = isbn
         self.editorial = editorial
-        self.categoria = categoria
-        self.palabras_clave = palabras_clave
-        self.cantidad = cantidad
-        self.ejemplares = [Ejemplar(id_ejemplar=i) for i in range(cantidad)]
+        self.ejemplares = []  # Inicializa como lista vacía
         self.historial = []
 
     def agregar_ejemplar(self):
