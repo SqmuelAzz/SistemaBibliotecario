@@ -29,7 +29,7 @@ Para ejecutar el proyecto, sigue estos pasos:
 
 Clona el repositorio:
 
-bash git clone <URL_DEL_REPOSITORIO>
+bash git clone <(https://github.com/SqmuelAzz/SistemaBibliotecario.git)>
 Navega al directorio del proyecto:
 
 bash cd biblioteca
