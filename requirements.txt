@@ -1,0 +1,28 @@
+rich
+singleton-decorator
+
+# biblioteca/
+# │
+# ├── models/
+# │   ├── __init__.py
+# │   ├── usuario.py
+# │   ├── articulo.py
+# │   ├── prestamo.py
+# │   ├── multa.py
+# │   ├── reporte.py
+# │   └── biblioteca.py
+# │
+# ├── controllers/
+# │   ├── __init__.py
+# │   ├── user_controller.py
+# │   ├── catalog_controller.py
+# │   └── loan_controller.py
+# │
+# ├── views/
+# │   ├── __init__.py
+# │   ├── user_view.py
+# │   ├── catalog_view.py
+# │   └── loan_view.py
+# │
+# ├── main.py
+# └── requirements.txt
