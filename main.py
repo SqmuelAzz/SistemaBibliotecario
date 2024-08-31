@@ -26,9 +26,10 @@ def main():
         console.print("1. Gestionar Usuarios")
         console.print("2. Gestionar Catálogo")
         console.print("3. Gestionar Préstamos")
-        console.print("4. Salir")
+        console.print("4. Generar Reportes")
+        console.print("5. Salir")
 
-        opcion = Prompt.ask("Seleccione una opción", choices=["1", "2", "3", "4"])
+        opcion = Prompt.ask("Seleccione una opción", choices=["1", "2", "3", "4", "5"])
 
         if opcion == "1":
             gestionar_usuarios()
@@ -37,6 +38,8 @@ def main():
         elif opcion == "3":
             gestionar_prestamos()
         elif opcion == "4":
+            generar_reportes()
+        elif opcion == "5":
             console.print("¡Hasta luego!", style="bold green")
             break
 
@@ -97,23 +100,109 @@ def gestionar_catalogo():
     id_articulo = Prompt.ask("Ingrese el ID del artículo")
     titulo = Prompt.ask("Ingrese el título del artículo")
     autor = Prompt.ask("Ingrese el autor del artículo")
-    isbn = Prompt.ask("Ingrese el ISBN del artículo")
+    ano_publicacion = Prompt.ask("Ingrese el año de publicación del artículo")
     editorial = Prompt.ask("Ingrese la editorial del artículo")
+    categoria = Prompt.ask("Ingrese la categoría del artículo")
+    palabras_clave = Prompt.ask("Ingrese las palabras clave del artículo (separadas por comas)")
+    cantidad = Prompt.ask("Ingrese la cantidad de ejemplares")
 
-    articulo = Articulo(id_articulo=id_articulo, titulo=titulo, autor=autor, isbn=isbn, editorial=editorial)
+    articulo = Articulo(id_articulo=id_articulo, titulo=titulo, autor=autor, ano_publicacion=ano_publicacion, 
+                        editorial=editorial, categoria=categoria, palabras_clave=palabras_clave.split(','), 
+                        cantidad=int(cantidad))
     
     # Aquí puedes manejar la lógica de guardar el artículo en el catálogo.
     console.print(f"Artículo '{articulo.titulo}' agregado exitosamente.", style="bold green")
 
-
 def gestionar_prestamos():
     console.print(Panel("Gestión de Préstamos", title="Préstamos"))
-    # Aquí podrías pedir al usuario seleccionar un usuario y un artículo para hacer el préstamo.
     usuario_id = Prompt.ask("Ingrese el ID del usuario")
     articulo_id = Prompt.ask("Ingrese el ID del artículo")
 
     # Aquí debes hacer la lógica para manejar el préstamo y guardarlo.
     console.print(f"Préstamo registrado exitosamente para el usuario {usuario_id} y el artículo {articulo_id}.", style="bold green")
+
+def generar_reportes():
+    console.print(Panel("Generar Reportes", title="Reportes"))
+    console.print("1. Artículos Más Prestados")
+    console.print("2. Usuarios Que Más Utilizan La Biblioteca")
+    console.print("3. Artículos Perdidos")
+    console.print("4. Artículos Dañados")
+    console.print("5. Ingresos Por Multas")
+    console.print("6. Por Categoría")
+    console.print("7. Rango De Fechas")
+    console.print("8. Exportar en Excel")
+    console.print("9. Exportar en PDF")
+    console.print("10. Reportes Semanales")
+    console.print("11. Reportes Mensuales")
+
+    opcion = Prompt.ask("Seleccione una opción", choices=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"])
+
+    if opcion == "1":
+        reportes_articulos_mas_prestados()
+    elif opcion == "2":
+        reportes_usuarios_mas_utilizan()
+    elif opcion == "3":
+        reportes_articulos_perdidos()
+    elif opcion == "4":
+        reportes_articulos_danados()
+    elif opcion == "5":
+        reportes_ingresos_multas()
+    elif opcion == "6":
+        reportes_por_categoria()
+    elif opcion == "7":
+        reportes_rango_fechas()
+    elif opcion == "8":
+        exportar_excel()
+    elif opcion == "9":
+        exportar_pdf()
+    elif opcion == "10":
+        reportes_semanales()
+    elif opcion == "11":
+        reportes_mensuales()
+
+def reportes_articulos_mas_prestados():
+    # Implementa la lógica para generar el reporte de artículos más prestados
+    console.print("Reporte: Artículos Más Prestados")
+
+def reportes_usuarios_mas_utilizan():
+    # Implementa la lógica para generar el reporte de usuarios que más utilizan la biblioteca
+    console.print("Reporte: Usuarios Que Más Utilizan La Biblioteca")
+
+def reportes_articulos_perdidos():
+    # Implementa la lógica para generar el reporte de artículos perdidos
+    console.print("Reporte: Artículos Perdidos")
+
+def reportes_articulos_danados():
+    # Implementa la lógica para generar el reporte de artículos dañados
+    console.print("Reporte: Artículos Dañados")
+
+def reportes_ingresos_multas():
+    # Implementa la lógica para generar el reporte de ingresos por multas
+    console.print("Reporte: Ingresos Por Multas")
+
+def reportes_por_categoria():
+    # Implementa la lógica para generar el reporte por categoría
+    console.print("Reporte: Por Categoría")
+
+def reportes_rango_fechas():
+    # Implementa la lógica para generar el reporte por rango de fechas
+    console.print("Reporte: Rango De Fechas")
+
+def exportar_excel():
+    # Implementa la lógica para exportar los reportes en formato Excel
+    console.print("Exportar Reporte en Excel")
+
+def exportar_pdf():
+    # Implementa la lógica para exportar los reportes en formato PDF
+    console.print("Exportar Reporte en PDF")
+
+def reportes_semanales():
+    # Implementa la lógica para generar reportes semanales
+    console.print("Reporte Semanal")
+
+def reportes_mensuales():
+    # Implementa la lógica para generar reportes mensuales
+    console.print("Reporte Mensual")
 
 if __name__ == "__main__":
     main()
